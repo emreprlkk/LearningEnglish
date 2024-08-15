@@ -3,11 +3,12 @@
 import express from 'express';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import cors from 'cors';
-
+import dotenv from 'dotenv';
+dotenv.config(); // .env dosyasını yükler
 const app = express();
 app.use(cors());
 
-const uri =  'mongodb+srv://emreprlk:emreprlk8@clusterprlk.ijc4p.mongodb.net/?retryWrites=true&w=majority&appName=ClusterPrlk';
+const uri =  process.env.VITE_Mongo_db_URL
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,

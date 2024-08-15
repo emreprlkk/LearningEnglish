@@ -47,6 +47,7 @@ const FlipCardBack = styled('div')({
   borderRadius: '8px',
   padding: '10px',
   boxSizing: 'border-box',
+
 });
 
 const TextContainer = styled('div')({
@@ -63,7 +64,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/items');
+        const response = await axios.get('http://localhost:5000/data');
         setItems(response.data);
       } catch (error) {
         console.error('Veri çekme hatası:', error);
