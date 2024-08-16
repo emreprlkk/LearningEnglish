@@ -64,7 +64,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/data');
+        const response = await axios.get('https://serverjs-one.vercel.app/full_data');
         setItems(response.data);
       } catch (error) {
         console.error('Veri çekme hatası:', error);
